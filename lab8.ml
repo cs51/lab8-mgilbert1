@@ -141,7 +141,7 @@ listening for the event.
 ......................................................................*)
 
   let fire_event (evt : 'a event) (arg : 'a) : unit =
-    List.iter (fun {action : 'a -> unit; _} -> action arg) !evt
+    List.iter (fun {action; _} -> action arg) !evt
 
 end
 
